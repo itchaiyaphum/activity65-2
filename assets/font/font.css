@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'TH Sarabun New';
+    src: url('font_file/THSarabunNew-Italic.woff2') format('woff2'),
+        url('font_file/THSarabunNew-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TH Sarabun New';
+    src: url('font_file/THSarabunNew-BoldItalic.woff2') format('woff2'),
+        url('font_file/THSarabunNew-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TH Sarabun New';
+    src: url('font_file/THSarabunNew-Bold.woff2') format('woff2'),
+        url('font_file/THSarabunNew-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TH Sarabun New';
+    src: url('font_file/THSarabunNew.woff2') format('woff2'),
+        url('font_file/THSarabunNew.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

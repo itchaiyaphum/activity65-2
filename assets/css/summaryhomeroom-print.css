@@ -1,0 +1,115 @@
+.table-std, .table-std th, .table-std td {
+  border: 1px solid #000000;
+  overflow: hidden;
+  word-wrap: normal;
+  word-break: break-all;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "TH Sarabun New";
+  font-size: 14pt;
+}
+
+.pagebreak {
+  font-family: "TH Sarabun New";
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  border: 2px solid #000;
+  padding: 14mm;
+  margin: 10px auto;
+}
+
+.header-img {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
+  line-height: 1.5;
+  background-color: #f8cbad;
+}
+
+.table-std {
+  margin-top: 0.5em;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-std th {
+  padding: 0.5em;
+  background-color: #2e74b5;
+  color: #ffffff;
+}
+
+.table-std td {
+  padding: 0.2em;
+}
+
+.sign {
+  width: 100%;
+  font-size: 16pt;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 16mm;
+}
+
+.sign-table {
+  width: 100%;
+  text-align: center;
+}
+
+.sign-table td {
+  width: 50%;
+}
+
+.signature {
+  position: absolute;
+  height: 15mm;
+  width: 50mm;
+  text-align: center;
+}
+
+.signature img {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  .pagebreak {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sign {
+    position: absolute;
+    bottom: 0;
+  }
+  .signature {
+    margin-left: 7mm;
+    margin-top: -0.7mm;
+  }
+}
+/*# sourceMappingURL=summaryhomeroom-print.css.map */

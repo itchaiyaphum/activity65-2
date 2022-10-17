@@ -1,0 +1,116 @@
+$font-s-h: 18pt;
+$font-s: 14pt;
+$margin-lr: 14mm;
+
+// $font-default: "TH Sarabun New", Arial, Helvetica, sans-serif;
+$font-default: "TH Sarabun New";
+
+%table {
+  border: 1px solid #000000;
+  overflow: hidden;
+  word-wrap: normal;
+  word-break: break-all;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-default;
+  font-size: $font-s;
+}
+
+.pagebreak {
+  font-family: $font-default;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  border: 2px solid #000;
+  padding: $margin-lr;
+  margin: 10px auto;
+}
+
+.header-img {
+  width: 100%;
+}
+.header {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
+  line-height: 1.5;
+  background-color: #f8cbad;
+}
+
+.table-std {
+  margin-top: 0.5em;
+  width: 100%;
+  border-collapse: collapse;
+  @extend %table;
+  th {
+    @extend %table;
+    padding: 0.5em;
+    background-color: #2e74b5;
+    color: #ffffff;
+  }
+  td {
+    @extend %table;
+    padding: 0.2em;
+  }
+}
+.sign {
+  width: 100%;
+  font-size: 16pt;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 16mm;
+}
+.sign-table {
+  width: 100%;
+  text-align: center;
+  td {
+    width: 50%;
+    // padding-top: 16mm;
+  }
+}
+.signature {
+  position: absolute;
+  height: 15mm;
+  width: 50mm;
+  // margin-left: -40mm;
+  text-align: center;
+  // background-color: rgba(#ffff00, 0.2);
+  img {
+    height: 100%;
+    // display: inline;
+  }
+}
+.text-center {
+  text-align: center;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: $margin-lr;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  .pagebreak {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sign {
+    position: absolute;
+    bottom: 0;
+  }
+  .signature {
+    margin-left: 7mm;
+    margin-top: -0.7mm;
+  }
+}

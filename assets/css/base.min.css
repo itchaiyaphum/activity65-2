@@ -1,0 +1,58 @@
+.tm-sidebar {
+  border-right: 1px solid #E5E5E5;
+}
+
+.uk-article {
+  padding-bottom: 10px;
+}
+
+/* Hover */
+
+.tm-nav > li.uk-active > a {
+  color: #444;
+  background: #F5F5F5;
+}
+
+.tm-nav > li > a:hover,
+.tm-nav > li > a:hover {
+  color: #444;
+  background: #F5F5F5;
+}
+
+.uk-placeholder {
+  padding: 20px;
+  margin-bottom: 15px;
+  color: #444;
+  background: #fafafa;
+  border: 1px dashed #ddd;
+}
+
+.uk-form-file {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.uk-form-file input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  font-size: 500px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.uk-comment-header {
+  padding: 5px;
+  border-bottom: 1px solid #efefef;
+}
+
+.uk-contact-box {
+  bottom: 0;
+  width: 100%;
+  padding: 3px;
+  background: #eee;
+}

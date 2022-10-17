@@ -1,0 +1,128 @@
+$font-s-h: 18pt;
+$font-s: 14pt;
+$sign-td: 7mm;
+$margin-lr: 14mm;
+
+// $font-default: "TH Sarabun New", Arial, Helvetica, sans-serif;
+$font-default: "TH Sarabun New";
+
+%table {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  overflow: hidden;
+  word-wrap: normal;
+  word-break: break-all;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-default;
+  font-size: $font-s;
+}
+
+.pagebreak {
+  font-family: $font-default;
+  width: 210mm;
+  height: 297mm;
+  overflow: auto;
+  border: 2px solid #000;
+  padding: $margin-lr;
+  margin: 10px auto;
+}
+h3 {
+  font-family: $font-default;
+  font-size: $font-s-h;
+}
+
+.risk-table {
+  @extend %table;
+  width: 100%;
+  // width: 210mm - ($margin-lr * 2);
+  th {
+    @extend %table;
+    padding: 0.1rem;
+  }
+  td {
+    @extend %table;
+    padding: 0.1rem;
+  }
+}
+
+.sign-table {
+  // width: 100%;
+  // background-color: rgba(#ffff00, 0.2);
+  width: 210mm - ($margin-lr * 2);
+  text-align: center;
+  td {
+    padding-top: $sign-td;
+  }
+}
+.sign {
+  margin-top: 5mm;
+}
+.sign-name {
+  display: inline-block;
+  // background-color: rgba(#ffff00, 0.2);
+  width: 60mm;
+  text-align: center;
+}
+.signature {
+  // float: left;
+  position: absolute;
+  // left: 36mm;
+  // transform: translate(16mm, -6mm);
+  height: $sign-td + 2mm;
+  width: 39mm;
+  text-align: center;
+  // background-color: rgba(#ffff00, 0.2);
+  img {
+    height: 100%;
+    display: inline;
+  }
+}
+
+%img {
+  width: 210mm - ($margin-lr * 2);
+  height: 115mm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgba(#ffff00, 0.2);
+  img {
+    display: inline-block;
+    margin: auto;
+    max-width: 210mm - ($margin-lr * 2);
+    max-height: 99mm;
+  }
+}
+.img-top {
+  @extend %img;
+  margin-top: 14mm;
+}
+.img-bottom {
+  @extend %img;
+  margin-top: 16mm;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: $margin-lr;
+  }
+  .pagebreak {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    page-break-before: always;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sign {
+    // margin: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+}
