@@ -61,11 +61,11 @@ class Activity_summary_model extends CI_Model
             $data_r = array(
                 'semester_id' => $semester_id,
                 'student_id' => $data_r['student_id'],
-                'flagpole' => $data_r['flagpole'],
-                'club' => $data_r['club'],
-                'homeroom' => $data_r['homeroom'],
-                'special' => $data_r['special'],
-                'boy_scout' => $data_r['boy_scout'],
+                'flagpole' => isset($data_r['flagpole']) ? $data_r['flagpole'] : null,
+                'club' => isset($data_r['club']) ? $data_r['club'] : null,
+                'homeroom' => isset($data_r['homeroom']) ? $data_r['homeroom'] : null,
+                'special' => isset($data_r['special']) ? $data_r['special'] : null,
+                'boy_scout' => isset($data_r['boy_scout']) ? $data_r['boy_scout'] : null,
                 'updated_at' => $data_r['updated_at']
             );
             $this->db->query($sql, $data_r);
