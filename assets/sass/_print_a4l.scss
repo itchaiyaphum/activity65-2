@@ -1,0 +1,40 @@
+$margin-page: 14mm;
+$font-s-h: 18pt;
+$font-s: 14pt;
+
+$font-default: "TH Sarabun New", Arial, Helvetica, sans-serif;
+// $font-default: "TH Sarabun New";
+
+body {
+  font-family: $font-default;
+  font-size: $font-s;
+}
+
+.pagebreak {
+  font-family: $font-default;
+  width: 297.4mm;
+  height: 215.9mm;
+  border: 2px solid #000;
+  padding: $margin-page;
+  margin: 10px auto;
+}
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: $margin-page;
+  }
+  body {
+    // * print background-color
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    background: none;
+  }
+  .pagebreak {
+    width: auto;
+    height: auto;
+    page-break-after: always;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}

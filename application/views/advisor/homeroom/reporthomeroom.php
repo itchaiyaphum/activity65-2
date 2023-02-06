@@ -110,7 +110,7 @@ $dot = '..............................................';
 
                                     <div>
                                         <div class="signature" style="transform: translate(16mm, -7mm);">
-                                            <img <?= empty($gr->re_advisor[0]->signature) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->re_advisor[0]->signature . '"'; ?> alt="">
+                                            <img <?= empty($gr->re_advisor[0]->signature) ? '' : ' src="' . base_url($gr->re_advisor[0]->signature) . '"'; ?> alt="">
                                         </div>
                                         ลงชื่อ
 
@@ -125,7 +125,7 @@ $dot = '..............................................';
                                 <td class="sign-r">
                                     <div>
                                         <div class="signature" style="transform: translate(20mm, -7mm);">
-                                            <img <?= empty($gr->headdepartment[0]->signature) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->headdepartment[0]->signature . '"'; ?> alt="">
+                                            <img <?= empty($gr->headdepartment->signature) ? '' : ' src="' . base_url($gr->headdepartment->signature) . '"'; ?> alt="">
                                         </div>
                                         ลงชื่อ
                                         .........................................................
@@ -133,7 +133,7 @@ $dot = '..............................................';
 
                                     </div>
                                     <div class="sign-name" style="margin-left: -13mm;">
-                                        (&nbsp;<?= empty($gr->headdepartment[0]) ? $dot : $gr->headdepartment[0]->firstname . ' ' . $gr->headdepartment[0]->lastname; ?>&nbsp;)
+                                        (&nbsp;<?= empty($gr->headdepartment) ? $dot : $gr->headdepartment->firstname . ' ' . $gr->headdepartment->lastname; ?>&nbsp;)
                                     </div>
 
 
@@ -143,7 +143,7 @@ $dot = '..............................................';
                                 <td class="sign-l">
                                     <div>
                                         <div class="signature" style="transform: translate(16mm, -7mm);">
-                                            <img <?= empty($gr->re_advisor[1]->signature) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->re_advisor[1]->signature . '"'; ?> alt="">
+                                            <img <?= empty($gr->re_advisor[1]->signature) ? '' : ' src="' . base_url($gr->re_advisor[1]->signature) . '"'; ?> alt="">
                                         </div>
                                         ลงชื่อ
                                         ...........................................................
@@ -163,7 +163,7 @@ $dot = '..............................................';
                                 <td class="sign-l">
                                     <div>
                                         <div class="signature" style="transform: translate(13mm, -7mm);">
-                                            <img <?= empty($gr->headadvisor[0]->signature) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->headadvisor[0]->signature . '"'; ?> alt="">
+                                            <img <?= empty($gr->headadvisor->signature) ? '' : ' src="' . base_url($gr->headadvisor->signature) . '"'; ?> alt="">
                                         </div>
                                         ลงชื่อ
                                         ..............................................
@@ -171,21 +171,21 @@ $dot = '..............................................';
 
                                     </div>
                                     <div class="sign-name" style="margin-left: -22mm;">
-                                        (&nbsp;<?= empty($gr->headadvisor[0]) ? $dot : $gr->headadvisor[0]->firstname . ' ' . $gr->headadvisor[0]->lastname; ?>&nbsp;)
+                                        (&nbsp;<?= empty($gr->headadvisor) ? $dot : $gr->headadvisor->firstname . ' ' . $gr->headadvisor->lastname; ?>&nbsp;)
                                     </div>
 
                                 </td>
                                 <td class="sign-r">
                                     <div>
                                         <div class="signature" style="transform: translate(13mm, -7mm);">
-                                            <img <?= empty($gr->executive[0]->signature) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->executive[0]->signature . '"'; ?> alt="">
+                                            <img <?= empty($gr->executive->signature) ? '' : ' src="' . base_url($gr->executive->signature) . '"'; ?> alt="">
                                         </div>
                                         ลงชื่อ................................................
                                         รองผู้อำนวยการฝ่ายพัฒนาฯ
 
                                     </div>
                                     <div class="sign-name" style="margin-left: -30mm;">
-                                        (&nbsp;<?= empty($gr->executive[0]) ? $dot : $gr->executive[0]->firstname . ' ' . $gr->headdepartment[0]->lastname; ?>&nbsp;)
+                                        (&nbsp;<?= empty($gr->executive) ? $dot : $gr->executive->firstname . ' ' . $gr->executive->lastname; ?>&nbsp;)
                                     </div>
                                 </td>
                             </tr>
@@ -196,13 +196,13 @@ $dot = '..............................................';
             </div>
 
             <div class="pagebreak">
-                <h3 style="text-align: center;">ภาพกิจกรรมโฮมรูม สัปดาห์ที่ 1 กลุ่ม D1</h3>
+                <h3 style="text-align: center;">ภาพกิจกรรมโฮมรูม สัปดาห์ที่ <?= $we->week; ?> กลุ่ม <?= $gr->group_name; ?></h3>
 
                 <div class="img-top">
-                    <img <?= empty($gr->obediences_img[0]->img) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->obediences_img[0]->img . '"'; ?> alt="">
+                    <img <?= empty($gr->obediences_img[0]->img) ? '' : ' src="' . base_url($gr->obediences_img[0]->img) . '"'; ?> alt="">
                 </div>
                 <div class="img-bottom">
-                    <img <?= empty($gr->obediences_img[1]->img) ? '' : ' src="http://activity64.itchaiyaphum.com' . $gr->obediences_img[1]->img . '"'; ?> alt="">
+                    <img <?= empty($gr->obediences_img[1]->img) ? '' : ' src="' . base_url($gr->obediences_img[1]->img) . '"'; ?> alt="">
                 </div>
             </div>
 

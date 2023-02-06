@@ -8,10 +8,19 @@ class Executivereport extends BaseController
     {
         parent::__construct();
         
+        $this->load->model('base_homeroom_model');
         $this->load->model('executive/executivereport_model');
+        $this->load->model('homeroomactivity_model');
+        $this->load->model('homeroomobedience_model');
+        $this->load->model('homeroomrisk_model');
+        $this->load->model('homeroomconfirm_model');
+        $this->load->model('admin/student_model');
         $this->load->model('admin/homeroom_model', 'admin_homeroom_model');
         $this->load->model('admin/major_model', 'admin_major_model');
         $this->load->model('admin/semester_model', 'admin_semester_model');
+        $this->load->library('form_validation');
+        $this->load->library('profile_lib');
+        $this->load->library('homeroom_lib');
     }
 
     public function index()

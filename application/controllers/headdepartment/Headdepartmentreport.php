@@ -8,9 +8,18 @@ class Headdepartmentreport extends BaseController
     {
         parent::__construct();
         
+        $this->load->model('base_homeroom_model');
         $this->load->model('headdepartment/headdepartmentreport_model');
+        $this->load->model('homeroomactivity_model');
+        $this->load->model('homeroomobedience_model');
+        $this->load->model('homeroomrisk_model');
+        $this->load->model('homeroomconfirm_model');
+        $this->load->model('admin/student_model');
         $this->load->model('admin/homeroom_model', 'admin_homeroom_model');
         $this->load->model('admin/semester_model', 'admin_semester_model');
+        $this->load->library('form_validation');
+        $this->load->library('profile_lib');
+        $this->load->library('homeroom_lib');
     }
 
     public function index()
@@ -30,7 +39,7 @@ class Headdepartmentreport extends BaseController
         ));
 
         $data['profile'] = $this->profile_lib->getData();
- 
+
 
         $this->load->view('nav', array('title'=>'/ หัวหน้าแผนก / รายงานการปฏิบัติหน้าที่กิจกรรมโฮมรูม'));
         $this->load->view('headdepartment/report/index', $data);

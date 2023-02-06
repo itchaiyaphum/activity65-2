@@ -23,7 +23,7 @@ class Reporthomeroom extends BaseController
     public function report()
     {
         $data = $this->report_model->data();
-
+        
         $this->load->view('advisor/homeroom/reporthomeroom', $data);
     }
 }

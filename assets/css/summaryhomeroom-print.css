@@ -1,4 +1,4 @@
-.table-std, .table-std th, .table-std td {
+.table-std td, .table-std th, .table-std {
   border: 1px solid #000000;
   overflow: hidden;
   word-wrap: normal;
@@ -6,8 +6,7 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -43,13 +42,11 @@ body {
   width: 100%;
   border-collapse: collapse;
 }
-
 .table-std th {
   padding: 0.5em;
   background-color: #2e74b5;
   color: #ffffff;
 }
-
 .table-std td {
   padding: 0.2em;
 }
@@ -66,7 +63,6 @@ body {
   width: 100%;
   text-align: center;
 }
-
 .sign-table td {
   width: 50%;
 }
@@ -77,7 +73,6 @@ body {
   width: 50mm;
   text-align: center;
 }
-
 .signature img {
   height: 100%;
 }
@@ -95,6 +90,7 @@ body {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
+
   .pagebreak {
     width: 210mm;
     height: 297mm;
@@ -103,13 +99,16 @@ body {
     padding: 0;
     margin: 0;
   }
+
   .sign {
     position: absolute;
     bottom: 0;
   }
+
   .signature {
     margin-left: 7mm;
     margin-top: -0.7mm;
   }
 }
+
 /*# sourceMappingURL=summaryhomeroom-print.css.map */

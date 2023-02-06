@@ -12,6 +12,9 @@
 	<li class="<?php echo $this->helper_lib->getActiveMenu('summaryhomeroom');?>">
 		<a href="<?php echo base_url('advisor/summaryhomeroom'); ?>"><i class="uk-icon-lightbulb-o"></i> สรุปผลเข้าร่วมกิจกรรมโฮมรูม</a>
 	</li>
+	<li class="<?php echo $this->helper_lib->getActiveMenu('activity_summary');?>">
+		<a href="<?php echo base_url('advisor/activity_summary'); ?>"><i class="uk-icon-pencil-square-o"></i> อวท.15</a>
+	</li>
 </ul>
 <br/>
 <div>

@@ -5,6 +5,7 @@ class Reporthomeroom_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('profile_lib');
     }
     public function index()
     {
@@ -90,10 +91,11 @@ class Reporthomeroom_model extends CI_Model
         return $data;
     }
 
+
     public function data()
     {
-        $this->load->library('tothai');
 
+        $this->load->library('tothai');
         $user_id = $this->session->user_id;
         $select = $this->input->post('week');
         foreach ($select as $value) {
@@ -108,6 +110,7 @@ class Reporthomeroom_model extends CI_Model
 
         $qr_week = $this->db->query("SELECT * FROM `homerooms` WHERE `status` = 1 AND `id` IN (SELECT `homeroom_actions`.`homeroom_id` FROM `homeroom_actions` WHERE `homeroom_actions`.`homeroom_id` IN ($week_r) AND `homeroom_actions`.`user_id` = $user_id AND `homeroom_actions`.`action_status` = 'confirmed')");
         $data['week'] = $qr_week->result();
+
         foreach ($data['week'] as $week) {
 
 
@@ -134,7 +137,6 @@ class Reporthomeroom_model extends CI_Model
                 $dateth['y'] = $this->tothai->toThaiDateTime($date[0]->created_at, '%y');
                 $group->thaidate = $dateth;
 
-
                 $qr_ck_std = $this->db->query("SELECT * FROM `homeroom_activity_items` WHERE `group_id` IN (" . $group->group_id . ") AND `homeroom_id`= $week->id");
                 $ck_std = $qr_ck_std->result();
                 $group->std_all = 0;
@@ -160,8 +162,9 @@ ORDER BY `advisors_groups`.`advisor_type` ASC");
                 $advisor_num = 1;
                 foreach ($group->re_advisor as $advisor) {
                     $group->advisor_name .= '
-            <div>' . $this->tothai->thainum($advisor_num++) . '. ' . $advisor->firstname . ' ' . $advisor->lastname . '</div>
-            ';
+    <div>' . $this->tothai->thainum($advisor_num++) . '. ' . $advisor->firstname . ' ' . $advisor->lastname . '</div>
+    ';
+                    $advisor->signature = $this->profile_lib->getUserData($advisor->user_id, 'signature');
                 }
 
                 $qr_obediences = $this->db->query("SELECT * FROM `homeroom_obediences` WHERE `group_id` = $group->group_id AND `homeroom_id` = $week->id AND `status` = 1");
@@ -170,8 +173,6 @@ ORDER BY `advisors_groups`.`advisor_type` ASC");
 
                 $qr_obediences_img = $this->db->query("SELECT * FROM `homeroom_obedience_attachments` WHERE `group_id` = $group->group_id AND `homeroom_id` = $week->id AND `status` = 1");
                 $group->obediences_img = $qr_obediences_img->result();
-
-
 
                 $qr_risk = $this->db->query("SELECT * FROM `homeroom_risk_items`
 INNER JOIN `users_student`
@@ -184,24 +185,26 @@ AND `homeroom_risk_items`.`group_id` IN (" . $group->group_id . ") AND `homeroom
         ON `homeroom_actions`.`user_id`=`users_headdepartment`.`user_id`
         AND `homeroom_actions`.`group_id`= " . $group->group_id . " AND `homeroom_actions`.`action_status`='confirmed'
         AND `homeroom_actions`.`homeroom_id`=$week->id");
-                $group->headdepartment = $qr_headdepartment->result();
+                $group->headdepartment = $qr_headdepartment->row();
+                $group->headdepartment->signature = $this->profile_lib->getUserData($group->headdepartment->user_id, 'signature');
 
                 $qr_headadvisor = $this->db->query("SELECT * FROM `homeroom_actions`
         INNER JOIN `users_headadvisor`
         ON `homeroom_actions`.`user_id`=`users_headadvisor`.`user_id`
         AND `homeroom_actions`.`group_id`= " . $group->group_id . " AND `homeroom_actions`.`action_status`='confirmed'
         AND `homeroom_actions`.`homeroom_id`=$week->id");
-                $group->headadvisor = $qr_headadvisor->result();
+                $group->headadvisor = $qr_headadvisor->row();
+                $group->headadvisor->signature = $this->profile_lib->getUserData($group->headadvisor->user_id, 'signature');
 
                 $qr_executive = $this->db->query("SELECT * FROM `homeroom_actions`
         INNER JOIN `users_executive`
         ON `homeroom_actions`.`user_id`=`users_executive`.`user_id`
         AND `homeroom_actions`.`group_id`= " . $group->group_id . " AND `homeroom_actions`.`action_status`='confirmed'
         AND `homeroom_actions`.`homeroom_id`=$week->id");
-                $group->executive = $qr_executive->result();
+                $group->executive = $qr_executive->row();
+                $group->executive->signature = $this->profile_lib->getUserData($group->executive->user_id, 'signature');
             }
         }
-
 
         return $data;
     }

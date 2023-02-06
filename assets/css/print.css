@@ -1,4 +1,4 @@
-.risk-table, .risk-table th, .risk-table td {
+.risk-table td, .risk-table th, .risk-table {
   border: 1px solid #000000;
   border-collapse: collapse;
   overflow: hidden;
@@ -7,8 +7,7 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -34,11 +33,9 @@ h3 {
 .risk-table {
   width: 100%;
 }
-
 .risk-table th {
   padding: 0.1rem;
 }
-
 .risk-table td {
   padding: 0.1rem;
 }
@@ -47,7 +44,6 @@ h3 {
   width: 182mm;
   text-align: center;
 }
-
 .sign-table td {
   padding-top: 7mm;
 }
@@ -68,27 +64,19 @@ h3 {
   width: 39mm;
   text-align: center;
 }
-
 .signature img {
   height: 100%;
   display: inline;
 }
 
-.img-top, .img-bottom {
+.img-bottom, .img-top {
   width: 182mm;
   height: 115mm;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
-.img-top img, .img-bottom img {
+.img-bottom img, .img-top img {
   display: inline-block;
   margin: auto;
   max-width: 182mm;
@@ -117,10 +105,12 @@ h3 {
     padding: 0;
     margin: 0;
   }
+
   .sign {
     width: 100%;
     position: relative;
     bottom: 0;
   }
 }
+
 /*# sourceMappingURL=print.css.map */

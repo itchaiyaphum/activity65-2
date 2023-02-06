@@ -1,0 +1,58 @@
+@import "print_a4l";
+$font-s: 12pt;
+body {
+    font-size: $font-s;
+}
+
+%table {
+    border: 1px solid #000000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.vertical-center {
+    vertical-align: middle;
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.tabledata {
+    @extend %table;
+    width: 100%;
+    line-height: 1;
+    th {
+        @extend %table;
+    }
+    td {
+        @extend %table;
+        
+    }
+    $name-w: 35mm;
+    .lastname {
+        border-left: none;
+        width: $name-w;
+    }
+    .firstname {
+        border-right: none;
+        width: $name-w;
+    }
+}
+
+.weeknum {
+    width: 6mm;
+    text-align: center;
+}
+
+.sign {
+    display: inline-block;
+    position: relative;
+    left: 150mm ;
+    padding-top: 7mm;
+    text-align: center;
+}
